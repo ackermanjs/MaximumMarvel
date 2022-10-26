@@ -1,0 +1,19 @@
+
+.backgroundImage{
+ /* background-image: url("images/The_Marvel_Universe.webp"); */
+ background-repeat: no-repeat;
+ background-size: cover;
+ background-color: rgb(171, 171, 171);
+ padding-top: 200px;
+ padding-bottom: 200px;
+}
+
+/* .footer{
+    background-color: red;
+} */
+
+#marvelLogo{
+    height: 250px;
+    width: 250px;
+
+}
