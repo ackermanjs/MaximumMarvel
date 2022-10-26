@@ -7,37 +7,54 @@
     <title>Document</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 </head>
-<header>
-    <img src = "https://upload.wikimedia.org/wikipedia/commons/b/b9/Marvel_Logo.svg">
-    <p>Home</p>
-    <p>Previous Searches</p>
-</header>
-<style>
-    html {
-        background-color: yellow;
-    }
-</style>
 <body>
-    <input class = "search bar"placeholder="Input Text Here"></input>
-    <select>
-        <option>Characters</option>
-        <option>Movies</option> 
-        <option>Reviews</option>
-        <option>Soundtrack</option>
-        <option>Trailers</option>
-        <option>TV Series</option>
-    </select>
-    <div>
-        <button>Search</button>
+    <div id = "page">
+        <header>
+            <img src = "https://upload.wikimedia.org/wikipedia/commons/b/b9/Marvel_Logo.svg">
+            <p>Home</p>
+            <p>Previous Searches</p>
+        </header>
+        <main>
+            <input class = "search bar" placeholder="Input Text Here"></input>
+            <select>
+                <option>Characters</option>
+                <option>Movies</option> 
+                <option>Reviews</option>
+                <option>Soundtrack</option>
+                <option>Trailers</option>
+                <option>TV Series</option>
+            </select>
+            <div>
+                <button>Search</button>
+            </div>
+            <script src="./assets/script.js"></script>
+        </main>
+        
+        <footer class = "footer has-background-warning">
+            <div class = "content has-text-centered">
+                <p class = "content is-small">This is a group Project</p>
+                <p class = "content is-small">We are not associated with the Marvel Franchise</p>
+            </div>
+        </footer>
+        <style>
+            body {
+                display: flex;
+                min-height: 100vh;
+                flex-direction: column;
+                background-color: yellow;
+            }
+            #page {
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+            }
+            footer {
+                margin-top: auto;
+            }
+
+        </style>
     </div>
-    <script src="./assets/script.js"></script>
 </body>
-
-<footer>
-    <p>This is a group Project</p>
-    <p>We are not associated with the Marvel Franchise</p>
-</footer>
-
 </html>
 
 <!--This is a comment-->
