@@ -13,20 +13,69 @@
 </header>
 
 <body>
-    <section Ca\>
-
-    </section>
-    <input placeholder="Input Text Here"></input>
-    <select>
-        <option>Videos</option>
-        <option>Trailers</option>
-        <option>Characters</option>
-        <option>Soundtrack</option>
-    </select>
-    <div>
-        <button>Search</button>
+<section class="backgroundImage">
+  <div class="columns is-centered is-mobile">
+    <figure id="marvelLogo" class="image is-128x128 is-centered">
+      <img src="./assets/images/Marvel-Comics-logo.png">
+    </figure>
+  </div>
+  <section class="is-fullheight">
+  <div class="hero-body">
+    <div class="">
+      <div class="columns is-centered is-mobile">
+        <div class="box">
+          <div class="field has-addons">
+            <p class="control">
+              <span class="select">
+                <select>
+                  <option>Characters</option>
+                  <option>Movies</option> 
+                  <option>Reviews</option>
+                  <option>Trailers</option>
+                  <option>TV Series</option>
+                  <option>Soundtrack</option>
+                </select>
+              </span>
+            </p>
+              <p class="control">
+                <input class="input" type="text" placeholder="Search the Database">
+            </p>
+              <p class="control">
+                <a class="button">
+                  Search
+              </a>
+          </p>
+        </div>
+      </div>
     </div>
-    <script src="./assets/script.js"></script>
+    </div>
+  </div>
+  </section>
+</section>
+<footer class = "footer has-background-warning">
+    <div class = "content has-text-centered">
+        <p class = "content is-small">This is a group Project</p>
+        <p class = "content is-small">We are not associated with the Marvel Franchise</p>
+    </div>
+</footer>
+<style>
+    body {
+        display: flex;
+        min-height: 100vh;
+        flex-direction: column;
+        background-color: yellow;
+    }
+    #page {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+    }
+    footer {
+        margin-top: auto;
+    }
+
+</style>
+   <script src="./assets/script.js"></script>
 </body>
 </html>
 
