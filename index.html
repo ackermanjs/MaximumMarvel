@@ -14,12 +14,34 @@
     <figure id="marvelLogo" class="image is-128x128 is-centered">
       <img src="./assets/images/Marvel-Comics-logo.png">
     </figure>
+    <!-- this is the hidden back button -->
+    <button class="button is-success is-rounded" onclick="showBox()" id="backButton" >Return to Search</button>
+    <!-- this is the card for displaying results -->
+    <div class="card" id="resultsCard">
+      <div class="card-image">
+        <figure class="image is-4by3">
+          <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+        </figure>
+      </div>
+      <div class="card-content">
+        <div class="media">
+          <div class="media-left">
+          </div>
+        </div>
+        <div class="content">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Phasellus nec iaculis mauris. 
+          <br>
+        </div>
+      </div>
+    </div>
+    <!-- end of results card -->
   </div>
   <section class="is-fullheight">
   <div id="heroSection" class="hero-body">
     <div class="">
       <div class="columns is-centered is-mobile">
-        <div class="box">
+        <div id="box" class="box">
           <div class="field has-addons">
             <p class="control">
               <span class="select">
@@ -34,10 +56,10 @@
               </span>
             </p>
               <p class="control">
-                <input class="input" type="text" placeholder="Search the Database">
+                <input class="input" id="input" type="text" placeholder="Search the Database">
             </p>
               <p class="control">
-                <a class="button">
+                <a class="button" onclick="hideBox()" id="btn">
                   Search
               </a>
           </p>
@@ -48,10 +70,10 @@
   </div>
   </section>
 </section>
-<footer class = "footer has-background-warning">
+
+<footer class = "footer has-background-danger">
     <div class = "content has-text-centered">
-        <p class = "content is-small">This is a group Project</p>
-        <p class = "content is-small">We are not associated with the Marvel Franchise</p>
+        <p class = "content is-small">We are not associated with Marvel. This is simply a student project. Enjoy!</p>
     </div>
 </footer>
 <style>
@@ -59,7 +81,7 @@
         display: flex;
         min-height: 100vh;
         flex-direction: column;
-        background-color: yellow;
+        /* background-color: yellow; */
     }
     #page {
         flex: 1;
@@ -74,3 +96,4 @@
    <script src="./assets/script.js"></script>
 </body>
 </html>
+
