@@ -24,6 +24,19 @@
 #landingPageFooter{
     min-height: 5vh;
 }
-body{
+
+/* body{
     background-color: rgb(255, 0, 0);
+} */
+
+#backButton{
+    display: none;
+    width: 150px;
+    height: 150px;
 }
+
+#resultsCard{
+    display: none;
+}
+
+
