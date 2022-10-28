@@ -16,16 +16,16 @@
     </figure>
   </div>
   <section class="is-fullheight">
-  <div class="hero-body">
+  <div id="heroSection" class="hero-body">
     <div class="">
       <div class="columns is-centered is-mobile">
         <div class="box">
           <div class="field has-addons">
             <p class="control">
               <span class="select">
-                <select>
+                <select id = "Dropdown" onchange="chosenSearch()">
                   <option>Characters</option>
-                  <option>Movies</option> 
+                  <option>Comics</option> 
                   <option>Reviews</option>
                   <option>Trailers</option>
                   <option>TV Series</option>
@@ -34,10 +34,10 @@
               </span>
             </p>
               <p class="control">
-                <input class="input" type="text" placeholder="Search the Database">
+                <input class="input" id="input" type="text" placeholder="Search the Database">
             </p>
               <p class="control">
-                <a class="button">
+                <a class="button" id="btn">
                   Search
               </a>
           </p>
@@ -68,7 +68,6 @@
     footer {
         margin-top: auto;
     }
-
 </style>
    <script src="./assets/script.js"></script>
 </body>
