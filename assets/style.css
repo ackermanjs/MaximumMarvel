@@ -1,19 +1,29 @@
 
 .backgroundImage{
- /* background-image: url("images/The_Marvel_Universe.webp"); */
+ background-image: url("images/marvelbackgroundgradient2.jpg");
  background-repeat: no-repeat;
  background-size: cover;
  background-color: rgb(171, 171, 171);
  padding-top: 200px;
  padding-bottom: 200px;
+ min-height: 90vh;
 }
 
-/* .footer{
-    background-color: red;
+#marvelLogo{
+    height: 300px;
+    width: 300px;
+}
+#marvelLogo2{
+    height: 200px;
+    width: 200px;
+}
+/* #heroSection{
+    
 } */
 
-#marvelLogo{
-    height: 250px;
-    width: 250px;
-
+#landingPageFooter{
+    min-height: 5vh;
+}
+body{
+    background-color: rgb(255, 0, 0);
 }
