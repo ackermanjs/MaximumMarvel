@@ -18,17 +18,29 @@
     width: 200px;
 }
 
-/* #landingPageFooter{
-    color: white;
-    background-color:rgba(0, 0, 0, 0);
+#landingPageFooter{
+    height: 10px;
+}
+
+/* body{
+    background-color: rgb(255, 0, 0);
 } */
 
 #backButton{
     display: none;
-    width: 150px;
-    height: 150px;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    
 }
 
 #resultsCard{
     display: none;
+    width: 50rem;
+    padding: 20px;
+    background-color: black;
+    color: white;
 }
+
+
+
