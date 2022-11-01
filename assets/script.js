@@ -10,7 +10,7 @@ var youtubeAPIKey = "AIzaSyDQuNvm3AKSVCSzUEPrx5_fRT1Lr9RWSY0"
 
 //function assigns the api to the url, fetches data
 function youtubeAPI(search) {
-var youtubeRequestURL = `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=5&order=relevance&q=${search}&key=${youtubeAPIKey}`
+var youtubeRequestURL = `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=5&order=viewcount&q=${search}&key=${youtubeAPIKey}`
 
 return fetch(youtubeRequestURL)
 .then((res) => {
@@ -25,7 +25,10 @@ return fetch(youtubeRequestURL)
 //interaction with returned data
 function displayCards(data){
 
-    // code to display results will go here //
+    //this section will display the results
+    //image
+    //title
+    //sub-title or description
     console.log(data)
 }
 
