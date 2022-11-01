@@ -1,5 +1,6 @@
 const btn = document.getElementById("btn");
 const displayResults = document.getElementById("Marvel-Results")
+const tableBody = document.getElementById("apiTable")
 //const input = document.getElementById("input")
 
 // can access 6 Resource types with API: Comics, Comic series, Creators, Characters
@@ -23,28 +24,68 @@ function marvelApi (value) {
         return res.json();
     })
     .then((results) => {
-        const marvelResults = results.data.results[0].comics.items
-        console.log(marvelResults);
+        var marvelResults = results.data.results[0];
+
+        // console.log(marvelResults);
+        // for (var i = 0; i < marvelResults.length; i++) {
+
+
+
+        //     var tableRow = document.createElement('tr');
+        //     var tableContent = document.createElement('td');
+        //     tableRow.appendChild(tableContent)
+        //     tableBody.appendChild(tableRow)
+        // }
         return marvelResults;
     })
 }
 
 // any interaction with return data happens to DOM //
+var container = document.createElement("div");
+function displayCards(data, youtubeResults) {
+    console.log(data);           
+    const card = document.querySelector(".card-image");
+    container = document.createElement("div");
+    const displayedImg = document.createElement("img");
+    const h2 = document.createElement("h2");
+    const p = document.createElement("p")
+    
+    const {name, comics, thumbnail, description} = data;
+    
+    h2.textContent = name;
+    p.textContent = description;
 
-function displayCards(data) {
-    const marvelDisplay = `<li>${data}</li>`
-    for (let i = 0; i < data.length; ++i) {
-        document.querySelector("ul").insertAdjacentHTML("beforeend", marvelDisplay)
-    }
-
+    const img = thumbnail.path + "." + thumbnail.extension;
+    displayedImg.setAttribute("src", img);
+    container.append(displayedImg, h2, p);
+    card.append(container);
+        for (var i = 0; i < 1; i++) {
+            // each comic
+            const comic = comics.items[i];
+            console.log(comic.name)
+            console.log(comic.resourceURI)
+            // fetch(comic.resourceURI + `&apikey=${MarvelApiKey}`)
+            // .then((e) => {
+            //     return e.json()
+            // })
+            // .then((r)=> {
+            //     console.log(r)
+            // })
+            
+            // var tableRow = document.createElement('tr');
+            // var tableContent = document.createElement('td');
+            // tableRow.appendChild(tableContent)
+            // tableBody.appendChild(tableRow)
+        }
+    // tableRow.appendChild(tableContent)
 }
 
 
 btn.addEventListener("click", async function(e) {
     const value = input.value;
     const data = await marvelApi(value);
-    console.log(data)
-    displayCards(data);
+    const youtubeResults = await youtubeAPI(value);
+    displayCards(data, youtubeResults);
 })
 
 const input = document.getElementById("input");
@@ -59,7 +100,7 @@ var youtubeAPIKey = "AIzaSyDQuNvm3AKSVCSzUEPrx5_fRT1Lr9RWSY0"
 
 //function assigns the api to the url, fetches data
 function youtubeAPI(search) {
-var youtubeRequestURL = `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=5&order=relevance&q=${search}&key=${youtubeAPIKey}`
+var youtubeRequestURL = `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=5&order=relevance&q=${search}&marvel&key=${youtubeAPIKey}`
 
 return fetch(youtubeRequestURL)
 .then((res) => {
@@ -83,11 +124,12 @@ btn.addEventListener("click", async function(e){
     const value = input.value;
     const youtubeResults = await youtubeAPI(value);
     const marvelApiREsults = await marvelApi(value);
-    displayCards(youtubeResults, marvelApiREsults);
+    //displayCards(youtubeResults, marvelApiREsults);
 })
 
 //hide UI elements on click and display back button + results card
  function hideBox(){
+    container.remove();
     box.style.display="none";
     marvelLogo.style.display="none";
     backButton.style.display="block";
