@@ -4,7 +4,7 @@ const tableBody = document.getElementById("apiTable")
 //const input = document.getElementById("input")
 
 // can access 6 Resource types with API: Comics, Comic series, Creators, Characters
-
+var youtubeAPIKey = "AIzaSyDQuNvm3AKSVCSzUEPrx5_fRT1Lr9RWSY0"
 var MarvelApiKey = "1c3019aa0e938e0391efafe45582ed7e"
 //var MarvelPrivKey = "2431def99f1e36f46b07b9e4473c79f556d6be99"
 
@@ -18,13 +18,14 @@ chosenSearch()
 
 function marvelApi (value) {
     const marvelRequestURL =`https://gateway.marvel.com:443/v1/public/characters?name=${value}&apikey=${MarvelApiKey}`
-    
     return fetch(marvelRequestURL)
     .then((res) => {
         return res.json();
     })
     .then((results) => {
+       //  console.log(results);
         var marvelResults = results.data.results[0];
+       // console.log(marvelResults)
 
         // console.log(marvelResults);
         // for (var i = 0; i < marvelResults.length; i++) {
@@ -58,7 +59,7 @@ function displayCards(data, youtubeResults) {
     const img = thumbnail.path + "." + thumbnail.extension;
     displayedImg.setAttribute("src", img);
     container.append(displayedImg, h2, p);
-    card.append(container);
+    // card.append(container);
         for (var i = 0; i < 1; i++) {
             // each comic
             const comic = comics.items[i];
@@ -78,13 +79,33 @@ function displayCards(data, youtubeResults) {
             // tableBody.appendChild(tableRow)
         }
     // tableRow.appendChild(tableContent)
+
+   
+
+
+      //youtube display to card
+            const youtubeVideo = document.createElement("div");
+            const videoId = youtubeResults.items[2].id.videoId 
+
+            //placeholder object to style while i refresh the API key for more quota
+            // youtubeVideo.setAttribute("style", "width: 560px; height: 315px; border: 1px solid black")
+           
+            youtubeVideo.innerHTML = `<iframe width="560" height="315" src="https://www.youtube.com/embed/${videoId}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`
+            container.append(youtubeVideo);
+      
+
+   card.append(container);
+
+
+         
 }
 
 
 btn.addEventListener("click", async function(e) {
     const value = input.value;
     const data = await marvelApi(value);
-    const youtubeResults = await youtubeAPI(value);
+     const youtubeResults = await youtubeAPI(value);
+  // console.log(youtubeResults)
     displayCards(data, youtubeResults);
 })
 
@@ -115,7 +136,10 @@ return fetch(youtubeRequestURL)
 //interaction with returned data
 /*function displayCards(data){
 
-    // code to display results will go here //
+    //this section will display the results
+    //image
+    //title
+    //sub-title or description
     console.log(data)
 }*/
 

@@ -6,7 +6,7 @@
  background-color: rgb(171, 171, 171);
  padding-top: 200px;
  padding-bottom: 200px;
- min-height: 90vh;
+ min-height: 85vh;
 }
 
 #marvelLogo{
@@ -17,9 +17,6 @@
     height: 200px;
     width: 200px;
 }
-/* #heroSection{
-    
-} */
 
 #landingPageFooter{
     height: 10px;
