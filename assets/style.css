@@ -22,7 +22,7 @@
 } */
 
 #landingPageFooter{
-    min-height: 5vh;
+    height: 10px;
 }
 
 /* body{
@@ -31,12 +31,19 @@
 
 #backButton{
     display: none;
-    width: 150px;
-    height: 150px;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    
 }
 
 #resultsCard{
     display: none;
+    width: 50rem;
+    padding: 20px;
+    background-color: black;
+    color: white;
 }
+
 
 
