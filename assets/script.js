@@ -83,12 +83,14 @@ function displayCards(data, youtubeResults) {
    
 
 
-      
+      //youtube display to card
             const youtubeVideo = document.createElement("div");
-            // const videoId = youtubeResults.items[j].id.videoId // 0 = j
-            youtubeVideo.setAttribute("style", "width: 560px; height: 315px; border: 1px solid black")
+            const videoId = youtubeResults.items[2].id.videoId 
+
+            //placeholder object to style while i refresh the API key for more quota
+            // youtubeVideo.setAttribute("style", "width: 560px; height: 315px; border: 1px solid black")
            
-            // youtubeVideo.innerHTML = `<iframe width="560" height="315" src="https://www.youtube.com/embed/${videoId}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`
+            youtubeVideo.innerHTML = `<iframe width="560" height="315" src="https://www.youtube.com/embed/${videoId}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`
             container.append(youtubeVideo);
       
 
