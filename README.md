@@ -19,7 +19,7 @@ A portion of the code used in this project is from the Bulma.IO framework.
  <img src="assets/images/Marvel-Comics-logo.png" width="200">
  <br>
 </h3>
-<h3 align="center">Special Thanks to the contributors involved with this project:
+<h3 align="center">Special thanks to the contributors involved with this project:
 <br>
 Jeffrey Ackerman
 <br>
