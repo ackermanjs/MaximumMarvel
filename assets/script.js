@@ -12,7 +12,6 @@ function chosenSearch () {
     var selectedSearch = document.getElementById("Dropdown")
     var searchText = selectedSearch.options[selectedSearch.selectedIndex].text
     var searchText = searchText.toLowerCase()
-    console.log (searchText)
 }
 chosenSearch()
 
