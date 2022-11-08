@@ -1,12 +1,12 @@
 const btn = document.getElementById("btn");
 const displayResults = document.getElementById("Marvel-Results")
 const tableBody = document.getElementById("apiTable")
-//const input = document.getElementById("input")
 
-// can access 6 Resource types with API: Comics, Comic series, Creators, Characters
+
+
 var youtubeAPIKey = "AIzaSyDQuNvm3AKSVCSzUEPrx5_fRT1Lr9RWSY0"
 var MarvelApiKey = "1c3019aa0e938e0391efafe45582ed7e"
-//var MarvelPrivKey = "2431def99f1e36f46b07b9e4473c79f556d6be99"
+
 
 function chosenSearch () {
     var selectedSearch = document.getElementById("Dropdown")
@@ -23,28 +23,16 @@ function marvelApi (value) {
         return res.json();
     })
     .then((results) => {
-       //  console.log(results);
+       
         var marvelResults = results.data.results[0];
-       // console.log(marvelResults)
-
-        // console.log(marvelResults);
-        // for (var i = 0; i < marvelResults.length; i++) {
-
-
-
-        //     var tableRow = document.createElement('tr');
-        //     var tableContent = document.createElement('td');
-        //     tableRow.appendChild(tableContent)
-        //     tableBody.appendChild(tableRow)
-        // }
+       
         return marvelResults;
     })
 }
 
-// any interaction with return data happens to DOM //
+
 var container = document.createElement("div");
-function displayCards(data, youtubeResults) {
-    console.log(data);           
+function displayCards(data, youtubeResults) {          
     const card = document.querySelector(".card-image");
     container = document.createElement("div");
     const displayedImg = document.createElement("img");
@@ -59,36 +47,23 @@ function displayCards(data, youtubeResults) {
     const img = thumbnail.path + "." + thumbnail.extension;
     displayedImg.setAttribute("src", img);
     container.append(displayedImg, h2, p);
-    // card.append(container);
+    
         for (var i = 0; i < 1; i++) {
-            // each comic
+           
             const comic = comics.items[i];
-            console.log(comic.name)
-            console.log(comic.resourceURI)
-            // fetch(comic.resourceURI + `&apikey=${MarvelApiKey}`)
-            // .then((e) => {
-            //     return e.json()
-            // })
-            // .then((r)=> {
-            //     console.log(r)
-            // })
-            
-            // var tableRow = document.createElement('tr');
-            // var tableContent = document.createElement('td');
-            // tableRow.appendChild(tableContent)
-            // tableBody.appendChild(tableRow)
+           
+        
         }
-    // tableRow.appendChild(tableContent)
+    
 
    
 
 
-      //youtube display to card
+      
             const youtubeVideo = document.createElement("div");
             const videoId = youtubeResults.items[2].id.videoId 
 
-            //placeholder object to style while i refresh the API key for more quota
-            // youtubeVideo.setAttribute("style", "width: 560px; height: 315px; border: 1px solid black")
+            
            
             youtubeVideo.innerHTML = `<iframe width="560" height="315" src="https://www.youtube.com/embed/${videoId}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`
             container.append(youtubeVideo);
@@ -105,7 +80,6 @@ btn.addEventListener("click", async function(e) {
     const value = input.value;
     const data = await marvelApi(value);
      const youtubeResults = await youtubeAPI(value);
-  // console.log(youtubeResults)
     displayCards(data, youtubeResults);
 })
 
@@ -116,10 +90,10 @@ const backButton = document.getElementById("backButton")
 const resultsCard = document.getElementById("resultsCard")
 const search = input
 
-//variables containing the API URLS for Marvel and YouTube
+
 var youtubeAPIKey = "AIzaSyDQuNvm3AKSVCSzUEPrx5_fRT1Lr9RWSY0"
 
-//function assigns the api to the url, fetches data
+
 function youtubeAPI(search) {
 var youtubeRequestURL = `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=5&order=relevance&q=${search}&marvel&key=${youtubeAPIKey}`
 
@@ -133,25 +107,13 @@ return fetch(youtubeRequestURL)
 })
 }
 
-//interaction with returned data
-/*function displayCards(data){
-
-    //this section will display the results
-    //image
-    //title
-    //sub-title or description
-    console.log(data)
-}*/
-
-//button click to call the function
 btn.addEventListener("click", async function(e){
     const value = input.value;
     const youtubeResults = await youtubeAPI(value);
     const marvelApiREsults = await marvelApi(value);
-    //displayCards(youtubeResults, marvelApiREsults);
 })
 
-//hide UI elements on click and display back button + results card
+
  function hideBox(){
     container.remove();
     box.style.display="none";
@@ -160,7 +122,6 @@ btn.addEventListener("click", async function(e){
     resultsCard.style.display="block";
  }
 
- //Show UI elements on back button click + hide back button
  function showBox(){
     box.style.display="block";
     marvelLogo.style.display="block";
